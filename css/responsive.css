@@ -52,7 +52,7 @@
     display: block;
   }
   .burgeroption{
-    
+    transform: translateX(200px);
   }
   .burgeroption li:hover{
   width: 100%;
@@ -81,29 +81,43 @@
     width: 100vw;
     align-self: center;
   }
-  #title div.wrap p.two{
-  font-size: 30px !important;
+  #title div.wrap .two{
+    font-size: 10px;
   }
   #title .wrap .intro {
     height: 750px; 
     width: 100%;
   }
   #title::after{
-    top: 44vh;
+    top: 78.2vh;
+    width: 30px;
+    height: 30px;
   }
   #title .wrap .introAni{
     font-size: 20px;
   }
+  #title .wrap .introAni h2{
+    font-size: 35px;
+  }
   #title .wrap .self{
     width:100vw;
     padding-top: 14px;
+    font-size: 29px;
   }
+ 
   #title .wrap .intro span{
     padding-left: 0;
   }
+  #title .wrap .intro div p:nth-child(2){
+    font-size: 13px;
+  }
+  #title .wrap .sm15{
+    display: hidden;
+  }
   #title .wrap .intro span a{
-    width: 117px;
-    height: 20px;
+    width: 62px;
+    height: 16px;
+    font-size: 12px;
   }
   
  /*About Me*/
