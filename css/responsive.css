@@ -1,14 +1,15 @@
 /* 스크린이고 최대너비가 768인 경우에 {}안의 스타일 적용됨  */
 @media screen and (max-width:768px){ 
   body{
-    max-width: 480px;
-    overflow: hidden;
+    width: 100%;
   }
+  
   header div.wrap nav{
   grid-template-columns: 1fr auto;
   grid-template-rows: auto;
   display: grid;
   max-width: 441px;
+  position: relative;
   }
   header div nav h1{
     margin: 0px;
@@ -23,43 +24,43 @@
   header div nav .rgnb{
     display: none;
   }
-  header div nav span{    
-  display: flex;
+  /*버거메뉴*/
+  .hamburger{
+    display: block; 
   }
-  .wrap{
-    padding: 0 20px;
+  .hamburger.active .bar:nth-child(2){
+    opacity: 0;
   }
-  .h1{
-  font-size: calc(48px * 0.6);
+  .hamburger.active .bar:nth-child(1){
+    transform: translateY(8px) rotate(45deg);
   }
-  header div.wrap nav>a{    
-  font-size: 0px;
-  width: 20px;
-  height: 20px;
-  border-top: 2px solid #454545;
-  border-bottom: 2px solid #454545;
-  display: flex;
-  align-items: center;
+  .hamburger.active .bar:nth-child(3){
+    transform: translateY(-8px) rotate(-45deg);
   }
-  header div.wrap nav > a span{
-  border-top: 2px solid #454545;
-  display: block;
-  width: 100%;
+  .nav-menu{
+    position: absolute;
+    top: -180px;
+    right: -25px;
+    gap: 0;
+    flex-direction: column;
+    background-color: #c1bdc1;
+    width: 43%;
+    text-align: center;
+    transition: 0.4s;
+    display: block !important;
   }
-  
-  /*반응형 off-sff-screen-menu 적용*/
-  .off-screen-menu {
-    display: block;
+  .nav-item:hover{
+    background-color: whitesmoke;
   }
-  .burgeroption{
-    transform: translateX(200px);
+  .nav-item{
+    width: 100%;
+    height: 50px;
+    line-height: 3;
   }
-  .burgeroption li:hover{
-  width: 100%;
-  border-bottom: 1px solid black;
+  .nav-menu.active{
+    top: 60px;
   }
-  
-/*타이틀*/
+
   #title{
     width: 100%;
     height: 100vh;    
@@ -68,7 +69,7 @@
     content:"";
     background-position: center;
     opacity: 0.5;
-    width: 100%;
+    /*! width: 100%; */
     max-width: 480px;
     height: 100vh;
     position: fixed;
@@ -77,16 +78,18 @@
     right: 0;
   }
   #title div.wrap{
-    padding: 40px;
+    padding: 4vw;
     width: 100vw;
     align-self: center;
+    flex-direction: column;
   }
   #title div.wrap .two{
     font-size: 10px;
   }
   #title .wrap .intro {
-    height: 750px; 
+    height: 47vh; 
     width: 100%;
+    padding-top: 15vh;
   }
   #title::after{
     top: 78.2vh;
@@ -94,15 +97,15 @@
     height: 30px;
   }
   #title .wrap .introAni{
-    font-size: 20px;
+    font-size: 59px;
   }
   #title .wrap .introAni h2{
-    font-size: 35px;
+    font-size: 56px;
   }
   #title .wrap .self{
     width:100vw;
     padding-top: 14px;
-    font-size: 29px;
+    font-size: 37px;
   }
  
   #title .wrap .intro span{
@@ -115,20 +118,33 @@
     display: hidden;
   }
   #title .wrap .intro span a{
-    width: 62px;
-    height: 16px;
-    font-size: 12px;
+    width: 97px;
+    height: 22px;
+    font-size: 17px;
+  }
+  #title .wrap .introimg{
+    width: 48vw;
+    
+    height: 27vh;
+    position: absolute;
+    top: 2vw;
   }
   
+  #title .updatetime{
+    display: none;
+  }
  /*About Me*/
   #aboutme{
     width: 100%;
     height: 100vh;
+    max-ith: 460px;
   }
   #aboutme .grid{
-    width: 100%;
     display: flex;
-    flex-direction: column
+    flex-direction: column;
+    width: 94vw;
+    height: 100vh;
+    padding: 10px;
   }
   #aboutme .wrap h2{
     font-size: 23px;
@@ -136,18 +152,80 @@
     padding-bottom: 12px;
   }
   #aboutme .wrap .myphotoAni{
-    width: 150px;
-    height: 170px;
-    overflow: visible !important;
+    height: 100%;
+    align-content: center;
   }
   #aboutme .wrap .myphotoAni img{
-  border-radius: 50% !important;
+    border-radius: 50% !important;
+    height: 49vh;
+    padding-bottom: 20px;
+  }
+  #aboutme .wrap .myphotoAni img:hover{
+    padding-bottom: 20px;
+  }
+  #aboutme .wrap .intro .myself{
+    padding: 7px;
+  }
+  #aboutme .wrap .intro .sm14{
+    display: none;
+  }
+  #aboutme .wrap .info{
+    display: none;
   }
   /*Project*/
   #projects{
     width: 100%;
     height: 100%;
   }
+  #projects .wrap .list{
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, auto);
+  }
+  #projects .wrap .list >li{
+    grid-row: 1;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, auto);
+    display: grid;
+    padding: 10px;
+  }
+  #projects .wrap .list li:nth-child(2){
+  grid-row: 2;
+  grid-column: 1;
+  }
+   #projects .wrap .list li:nth-child(3){
+    grid-column: 1;
+    grid-row: 3;
+  }
+  #projects .wrap .list li h3{
+    grid-column: 1;
+    grid-row: 1;
+  }
+  #projects .wrap .list li figure{
+    grid-column: 1;
+    grid-row: 2;
+  }
+  #projects .wrap .list li .sub{
+    grid-column: 1;
+    grid-row: 3;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  #projects .wrap .list li .sub .work{
+    width: 0;
+    height: 0;
+    visibility: hidden;
+  }
+  #projects .wrap .list li .sub li:nth-child(5){
+    display: none;
+  }
+  #projects .wrap .list li .sub li:nth-child(6){
+    margin-top: 15px;
+  }
+  #projects .wrap .list li .sub li:nth-child(6) a{
+    /*! margin-bottom: 5px; */
+    margin-right: 10px;
+  }
+  #projects .wrap p
   #contact{
     
   }
@@ -158,27 +236,59 @@
   }
   footer div.wrap{
 
+  width: 400px;
+  display: grid;
+  height: 100%;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  align-items: center;
+  padding: 0;
+  margin: 0;
   }
   footer .top{
   top: -100px;
+  display: none;
   }
   footer div h1{
     grid-column: 1;
     grid-row: 1;
   }
-  footer div sns{
+  footer div h1 .logo{
+    width: 50px;
+    height: 50px;
+    background-image: cover;
+  }
+  footer div .sns{
     grid-column: 2;
     grid-row: 1;
+  }
+  footer div .sns li{
+    padding-right: 10px;
   }
   footer div .fnb {
     grid-column: 1;
     grid-row: 2;
     column-gap: 1vw;
   }
+  footer div .fnb li{
+    padding-right: 10px;
+  }
+  footer div .fnb li:nth-child(2){
+    width: 66px;
+  }
+  footer div .email {
+    
+  }
+  footer div .phone{
+    
+  }
   footer div p{
     grid-column: 1;
     grid-row: 3;
   }
+  .cursor, .cursor2{
+  display: none;
+  
   
 }
 
