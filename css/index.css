@@ -397,7 +397,7 @@ main {
   grid-column: 1;
   grid-row: 2;
   width: 306px;
-  height: 340px;
+  height: 400px;
   overflow: hidden;
   transform: translateY(14px);
   border-radius: 0 44px;
