@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="css/responsive.css">  
     <!--검색엔진 설정 *수정필요!!!!!!*-->
     <meta property="og:title" content="Min Choi's Portfolio">
-    <meta property="og:description" content="UIUX Designer based in Korea">
+    <meta property="og:description" content="UIUX Designer based in VA, US">
     <meta  name="og:image" content="img/thumbnail.png">
     <!-- <meta property="og:type" content="website">
     <meta property="og:url" content="http://luna-brew.com/">
@@ -110,6 +110,20 @@
                     return false; // a태그가 있는 경우에 새로고침으로 명령어실행할 시간이 없어서 작동이 안됨...
             }); 
         });
+         // (반응형).nav-item 클릭시 스크롤 이동 
+         $(document).ready(function(){    
+            var c=[      
+            $("#aboutme").offset().top,
+            $("#projects").offset().top,  
+            $("#contact").offset().top       
+            ];      
+            var n; 
+            $("li.nav-item").click(function(){               
+                n = $(this).index();
+                $("html,body").animate({scrollTop:c[n]},1500);  
+                    // a태그가 있는 경우에 새로고침으로 명령어실행할 시간이 없어서 작동이 안됨...
+            }); 
+        });
         $(document).ready(function(){ 
             $("footer .top").click(function(){
                 $("html, body").animate({scrollTop:0},1000);
@@ -189,7 +203,7 @@
                 <ul>                            
                     <p class="two">                        
                         <strong> UI/UX designer </strong>
-                        based in Seoul, South Korea
+                        based in VA, US
                     </p>  
                 </ul>
                 <div>         
