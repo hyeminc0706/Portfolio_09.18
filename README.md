@@ -1,4 +1,4 @@
-😄 I'm Min Choi, passionate & delicate UI/UX designer based in VA, U.S.
+😄 I'm Min Choi, passionate & delicate front-end developer based in VA, U.S.
 
 📫 Contact Info.
     hyeminc0706@gmail.com
