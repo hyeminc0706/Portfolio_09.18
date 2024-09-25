@@ -17,14 +17,6 @@ header{
   width: 100%;
   top: 0;
   z-index: 9;
-  position: relative;
-}
-header div {
-}
-header div nav {
-}
-header div nav > a{
-
 }
 header div nav h1 {
   display: flex;
@@ -35,8 +27,8 @@ header .logo {
 }
 header div nav .gnb {
   box-sizing: border-box;
-  width: 15vw;
-  height: 2.2vw;
+  width: 295px;
+  height: 40px;
   justify-content: center;
   background-color: #ffffffbf;
   border-radius: 20px;
@@ -53,7 +45,7 @@ header div .gnb li a {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 500; 
   width: 100%;
   height: 100%;
@@ -84,64 +76,65 @@ header div nav .rgnb{
 header div nav .rgnb a{
   background-size: contain; 
   background-repeat: no-repeat;
-  background-position: bottom;
+  background-position: center;
   width: 14px;
-  height: 18px;
+  height: 21px;
   padding-right: 29px;
 }
 header div nav .rgnb a:nth-of-type(1){
-  background-image: url(../img/in.png);
+  background-image: url(../img/instagram.png);
+  width: 16px;
+  height: 22px;
 }
 header div nav .rgnb a:nth-of-type(2){
   background-image: url(../img/email2.png);
 }
-header div nav .nav-menu{
-  display: none;
-}
-.off-screen-menu{
-  display: none;
-}header div.wrap span .burger{
-  width: 20px;
-  border-top: 2px solid #5b5b58;
-  border-bottom: 2px solid #5b5b58;
-  height: 17px;
-  color: transparent;
-  }
-  .burger::before{
-  content: "";
-  width: 100%;
-  height: 2px;
-  display: block;
-  background-color: #5b5b58;
-  transform: translateY(7.5px);
+/*버거*/
+.hamburger{
+  display: none; 
   }
   .burgeroption{
   position: absolute;
   top: 59px;
   background-color: #d3d3d2;
   right: 40px !important;
+   visibility: hidden
   }
-  .burgeroption li{
-  width: 129px;
-  padding-top: 25px;
-  text-align: center;
-  padding-right: 25px;
-  background-color: #cbcccc;
+  .nav-item{
+    list-style: none;
   }
-  .burgeroption li:hover{
-   border-bottom: 1px solid var(--black);
-   width: 100px;
-   transition: 1s;
-   text-align: left;
-   background-color: #cbcccc;
+  .nav-link{
+    color: purple; 
+    text-decoration: none;
   }
-  .burgeroption li:nth-of-type(4){
-  padding-bottom: 20px;
+  .nav-menu{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 60px;
+    display: none;
   }
-  
+  .nav-link{
+    transition: 0.7s ease;
+  }
+  .nav-link:hover{
+    color: dodgerblue;
+  }
+  .hamburger{
+    display: none;
+    cursor: pointer;
+  }
+  .bar{
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    background-color: black;
+  }
 /* 타이틀영역 */
 #title{
-  height: 42.5vw;
+  height: 86vh;
   display: flex;
   justify-content: center;
   position: relative;
@@ -311,6 +304,10 @@ header div nav .nav-menu{
   animation-duration: 4s;
   margin-bottom: 10px;
 }
+.intro div p:nth-child(2){
+  line-height: 1.2;
+  color: #242424;
+}
 #title .wrap .intro > div{
   padding-top: 2.5vw;
   padding-bottom: 37px;
@@ -325,7 +322,7 @@ header div nav .nav-menu{
   width: 6vw;
   height: 1.3vw;
   color: #000000d4;
-  line-height: 1.4;
+  line-height: 1.5;
   border-radius: 145px;
   text-align: center;
   background-color: white;
@@ -397,7 +394,7 @@ main {
   grid-column: 1;
   grid-row: 2;
   width: 306px;
-  height: 400px;
+  height: 386px;
   overflow: hidden;
   transform: translateY(14px);
   border-radius: 0 44px;
@@ -423,6 +420,7 @@ main {
   border-radius: 50%;
   width: 100%;
   height: 100%;
+  padding-bottom: 20px;
 } 
 #aboutme .wrap .photoAni figure figcaption{
   display: none;
@@ -437,20 +435,14 @@ main {
   margin-bottom:20px; 
   gap: 10px;
 }
-#aboutme .wrap .intro .sm14 li span:first-child{
-  font-weight: 700; 
+#aboutme .wrap .intro .sm14 span{
+  display: flex;
 }
-##aboutme .wrap .intro .sm14 li span:nth-of-type() p:first-child{
-  color: #ccc;
+#aboutme .wrap .intro .sm14 span p:nth-child(odd){
+  color: #black;
 }
-#aboutme .wrap .intro .sm14 li span:nth-of-type(3){
-  
-}
-#aboutme .wrap .intro .sm14 li span:nth-of-type(4){
-  
-}
-#aboutme .wrap .intro .sm14 li span:nth-of-type(5){
-  
+#aboutme .wrap .intro .sm14 span p:nth-child(even){
+  color: #black;
 }
 #aboutme .wrap .info {
   grid-column: 2 / span 2;
@@ -486,6 +478,7 @@ main {
   background-position: center;
   background-size: cover;
   transform: translateX(-2.5px) translateY(-10px);
+  margin-right: 4px;
 }
 #aboutme .wrap .info li:last-child strong{
   background-image: url(../img/github.png);
@@ -596,7 +589,7 @@ main {
   transform: translateX(-1px);
   width: 100%;
   height: 100%;
-  max-width: 716px;
+  max-width: 743px;
 }
 @keyframes  slide{
   100%{
@@ -608,12 +601,12 @@ main {
 }
 #projects .wrap .list li figure::after{
   content:"";
-  width: 84px;
+  width: 65px;
   height: 100%;
   display: block;
   position: absolute;
   right: 9px;
-  bottom: -51px;
+  bottom: -10px;
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -623,9 +616,13 @@ main {
 }
 #projects .wrap .list li:nth-child(2) figure::after{
   background-image: url(../img/pf1-phone.png);
+  bottom: -8px;
 }
 #projects .wrap .list li:nth-child(3) figure::after{
   background-image: url(../img/pf1-phone.png);
+  bottom: -120px;
+  width: 120px;
+  height: 120%;
 }
 #projects .wrap .list li .sub {
   grid-column: 2;
